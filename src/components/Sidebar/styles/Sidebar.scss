@@ -1,0 +1,95 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  width: 200px;
+  border-right: 1px solid lighten(#B6B6B6, 10%);
+  background-color: #212121;
+  height: 100%;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.14), 0 2px 2px 0 rgba(0,0,0,.098), 0 1px 5px 0 rgba(0,0,0,.084);
+}
+
+.menu {
+  max-width: 100%;
+  color: #c0c1c4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding-top: 82px;
+  font-size: .8rem;
+  overflow: hidden;
+}
+
+.menu .menu-logo {
+  height: 50px;
+  line-height: 50px;
+  background: #ee6600;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.menu .menu-logo img {
+  width: 25px;
+  height: 25px;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.menu .menu-logo span {
+  margin-left: 5px;
+}
+
+.menu .menu-logo a,
+.menu .menu-logo a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu .bdb-groove:before {
+  width: 92%;
+  margin-left: 4%;
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 0;
+  border-top:1px solid #000;
+  border-bottom: 1px solid #333;
+}
+
+.menu .menu-extend {
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 700;
+  top: 50px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+
+.menu .menu-extend:hover {
+  color: #ee6600;
+}
+
+.menu .menu-extend .rotate180 {
+  transform: rotate(180deg);
+}
+
+.menu.hide {
+  width: 50px;
+  overflow: visible;
+}
+
+.menu.hide .menu-extend {
+  text-align: left;
+  padding-left: 17px;
+}
+
+.menu.hide .menu-logo-text {
+  display: none;
+}

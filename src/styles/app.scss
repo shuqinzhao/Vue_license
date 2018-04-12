@@ -1,0 +1,30 @@
+.fl-r {
+  float: right;
+}
+.fl-l {
+  float: left;
+}
+.fix {
+  *zoom: 1;
+}
+.fix:before,
+.fix:after {
+  display: table;
+  content: ' ';
+}
+.fix:after {
+  clear: both;
+}
+.cur-p {
+  cursor: pointer;
+}
+
+.mr5 { margin-right: 5px; }
+
+body {
+  font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #212121;
+  background-color: #f1f4f6;
+}

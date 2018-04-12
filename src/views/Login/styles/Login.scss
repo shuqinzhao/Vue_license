@@ -1,0 +1,389 @@
+@font-face {
+  font-family: 'BellMT';
+  src: url('../../..//libs/fonts/BellMT.eot');
+  src:
+    url('../../../libs/fonts/BellMT.eot?#font-spider') format('embedded-opentype'),
+    url('../../../libs/fonts/BellMT.woff2') format('woff2'),
+    url('../../../libs/fonts/BellMT.woff') format('woff'),
+    url('../../../libs/fonts/BellMT.ttf') format('truetype'),
+    url('../../../libs/fonts/BellMT.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.body--login {
+  background-image: url(../../../assets/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.form__group {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.form__label {
+  display: inline-block;
+  margin-bottom: 5px;
+  max-width: 100%;
+  font-weight: 700;
+}
+.login .form__control {
+  display: block;
+  padding: 5px 10px;
+  width: 100%;
+  height: 36px;
+  color: #a1a1a1;
+  outline: 0;
+  border: 1px solid #ededed;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  /* transition: all .2s ease-out; */
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+.form__control:focus {
+  border-color: #ff7052;
+}
+.form__control-group {
+  position: relative;
+}
+.form__control-icon,
+.form__control-feedback {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  color: #d4d4d4;
+  font-size: 20px;
+  text-align: center;
+}
+.form__control-icon {
+  left: 10px;
+}
+.form__control-feedback {
+  right: 10px;
+}
+.login .form__control-group .form__control.has-icon {
+  padding-left: 40px;
+}
+.form__control-group .form__control.has-icon:focus {
+  padding-left: 10px;
+}
+.form__control-group .form__control.has-icon:focus + .form__control-icon {
+  opacity: 0;
+}
+.form__control-group .form__control.has-feedback {
+  padding-right: 40px;
+}
+.form__btn {
+  display: inline-block;
+  padding: 4px 10px;
+  min-height: 30px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.form__submit {
+  color: #fff;
+  background-color: #ee6100;
+}
+.form__submit:hover,
+.form__submit:focus {
+  text-decoration: none;
+  background-image: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .1));
+}
+.form__cancel {
+  color: #fff;
+  background-color: #ee6100;
+}
+.form__group.captcha {
+  position: relative;
+  padding-right: 100px;
+}
+.form__captcha {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90px;
+  height: 36px;
+  cursor: pointer;
+  border: 1px solid #ededed;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.form__group.has-success .form__label,
+.form__group.has-success .form__control-feedback {
+  color: #3c763d;
+}
+.form__group.has-success .form__control {
+  border-color: #3c763d;
+}
+.form__group.has-success .form__control:focus {
+  border-color: #2b542c;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+}
+.form__group.has-danger .form__label,
+.form__group.has-danger .form__control-feedback {
+  color: #a94442;
+}
+.form__group.has-danger .form__control {
+  border-color: #a94442;
+}
+.form__group.has-danger .form__control:focus {
+  border-color: #843534;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075),0 0 6px #ce8483;
+}
+
+/* alert */
+
+.login-alert {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  border-radius: 4px;
+  /* box-shadow: 0 3px 5px -1px rgba(0,0,0,.14),0 6px 10px 0 rgba(0,0,0,.098),0 1px 18px 0 rgba(0,0,0,.084); */
+  transition: all .3s;
+}
+
+.login-alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.login-alert-success {
+  color: #3c763d;
+  border-color: #d0e9c6;
+  background-color: #dff0d8;
+}
+.login-alert-danger {
+  color: #a94442;
+  border-color: #ebcccc;
+  background-color: #f2dede;
+}
+
+/* language */
+.language {
+  font-size: 0;
+  line-height: 0;
+}
+.language__item {
+  display: inline-block;
+  padding: 0 2px;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  color: #999;
+  font-size: .75rem;
+  cursor: pointer;
+
+  &.d-n {
+    display: none;
+  }
+}
+.language__item:hover {
+  color: #333;
+}
+.language__item:not(:last-child) {
+  margin-right: 5px;
+}
+.language__item.active {
+  display: none;
+}
+
+/* login */
+.login {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 280px;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+  /* transition: all .3s; */
+}
+.login .info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 15px;
+  width: 230px;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+  /* color: #c0c1c4; */
+  font-size: 1rem;
+  /* background-color: rgba(238, 102, 0, .6); */ /* #e60 */
+  /* background-color: rgba(255, 112, 82, .8); */ /* #FF7052 */
+  /* background-color: rgba(43, 43, 56, 1); */ /* #2b2b38 */
+  background: url(../../../assets/info-bg.png) no-repeat top right;
+  background-size: cover;
+  opacity: 1;
+  /* transition: all .3s ease; */
+}
+.login .info__hd,
+.login .info__bd,
+.login .info__ft {
+  margin-bottom: 25px;
+}
+.login .info__bd {
+  text-align: center;
+}
+.login .info__logo {
+  height: 40px;
+}
+.login .info__title {
+  display: inline-block;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  font-size: 32px;
+  font-weight: 400;
+  font-family: 'BellMT';
+}
+.login .info__title::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  content: '';
+}
+.login .info__desc {
+  font-size: .85rem;
+}
+.login .info__version {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  color: #aaa;
+  font-size: .75rem;
+  text-align: center;
+}
+.login .info__ft {
+  display: flex;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+.login .info__ft a {
+  margin: 5px;
+  padding: 5px 10px;
+  height: 30px;
+  line-height: 20px;
+  color: #fff;
+  font-size: .75rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgba(51, 102, 204, .8);
+  border-radius: 2px;
+  flex: 1 1 auto;
+}
+.login .info__ft a:hover,
+.login .info__ft a:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(51, 102, 204, 1);
+}
+
+.login .form {
+  /* flex: 1 1 auto; */
+  position: relative;
+  z-index: 10;
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+.login .form fieldset {
+  margin: 0;
+  padding: 0 15px;
+  border: none;
+}
+.login .form legend {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+}
+.login .form legend::after {
+  position: absolute;
+  right: -15px;
+  left: -15px;
+  bottom: 1px;
+  height: 1px;
+  background-color: #ddd;
+  content: '';
+}
+.login .form legend .language {
+  float: right;
+  margin-top: 15px;
+}
+.login .form__label {
+  display: none;
+}
+.login .form__submit {
+  width: 100%;
+  font-size: .875rem;
+}
+.login .form__message {
+  position: relative;
+  z-index: -1;
+}
+.login .form__message .login-alert {
+  position: absolute;
+  top: -98px;
+  right: 0;
+  z-index: 5;
+  width: 100%;
+  opacity: 0;
+  transition: all .3s;
+}
+.login .form__message.show {
+  z-index: 1;
+}
+.login .form__message.show .login-alert {
+  top: -260px;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .login {
+    width: 530px;
+    padding-left: 230px;
+    background-color: #fff;
+  }
+  .login .form {
+    overflow: visible;
+  }
+  .login .form__message .login-alert {
+    width: 200px;
+  }
+  .login .form__message.show .login-alert {
+    top: -98px;
+    right: calc(100% + 30px);
+  }
+}

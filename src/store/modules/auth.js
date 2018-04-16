@@ -59,7 +59,7 @@ const actions = {
       })
       .then(req => req.json())
       .then(json => {
-        if (json.status === 'success') {
+        if (json.error_code === 0) {
           state.auth = Object.assign({}, state.auth, {
             token: json.data.token,
             username: json.data.user,

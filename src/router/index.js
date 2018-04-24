@@ -5,7 +5,7 @@ import Login from '@/views/Login'
 
 import {
   isLogined,
-} from '../utils';
+} from '../utils'
 
 Vue.use(Router)
 const router = new Router({
@@ -26,12 +26,10 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   const logined = isLogined()
 
-  if (to.name === 'Login' && !logined) {
-    next()
+  if (to.name !== 'Login' && !logined) {
+    next({ path: '/login' })
   } else {
-    next({
-      path: '/login',
-    })
+    next()
   }
 
 })

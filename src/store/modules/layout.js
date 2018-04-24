@@ -1,16 +1,16 @@
-const HIDE_TOPBAR = 'app/layout/HIDE_TOPBAR';
-const SHOW_TOPBAR = 'app/layout/SHOW_TOPBAR';
+const HIDE_TOPBAR = 'app/layout/HIDE_TOPBAR'
+const SHOW_TOPBAR = 'app/layout/SHOW_TOPBAR'
 
 const hideTopbar = () => ({
   type: HIDE_TOPBAR,
-});
+})
 const showTopbar = () => ({
   type: SHOW_TOPBAR,
-});
+})
 
 const state = {
   showTopbar: true,
-};
+}
 
 const mutations = {
   layout(state, action) {
@@ -24,7 +24,7 @@ const mutations = {
           showTopbar: true,
         })
       default:
-        return state;
+        return state
     }
   }
 }
@@ -32,7 +32,7 @@ const mutations = {
 export const actions = {
   hideTopbar,
   showTopbar,
-};
+}
 
 export const layout = {
   state,

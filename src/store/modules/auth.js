@@ -48,7 +48,7 @@ const mutations = {
 }
 
 const actions = {
-  login ({ state }, { name, password } ) {
+  login ({ state, commit }, { name, password } ) {
     return new Promise((resolve, reject) => {
       fetch(MODULE_LICENSE, '/login', {
         method: 'post',
@@ -60,12 +60,13 @@ const actions = {
       .then(req => req.json())
       .then(json => {
         if (json.error_code === 0) {
-          state.auth = Object.assign({}, state.auth, {
+          Object.assign(state, {
             token: json.data.token,
             username: json.data.user,
             role: json.data.role,
             license_token: json.data.license_token
           })
+          commit('setAuth', state)
         } else {
           reject(new Error('The interface returned an error'))
         }

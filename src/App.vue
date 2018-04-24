@@ -15,7 +15,7 @@ import Sidebar from './components/Sidebar'
 
 import {
   isLogined
-} from './utils';
+} from './utils'
 
 export default {
   name: 'app',

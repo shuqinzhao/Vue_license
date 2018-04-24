@@ -132,6 +132,7 @@ export const isLogined = () => {
   let auth = STORAGE_OBJECT.getItem(KEY_AUTH) ? JSON.parse(STORAGE_OBJECT.getItem(KEY_AUTH)) : {}
 
   // TODO: 2016-03-30 为了解决用户打开新页面需要重新登录的问题
+
   if ((Object.keys(auth).length === 0) && docCookies.hasItem(KEY_AUTH)) {
     auth = JSON.parse(docCookies.getItem(KEY_AUTH))
 

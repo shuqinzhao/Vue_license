@@ -48,15 +48,15 @@ export default {
   props: ['isLogin'],
   methods: {
     handleLogout () {
-      const { logout, history } = this.props;
+      const { logout, history } = this.props
 
-      logout();
-      history.pushState(null, '/login');
+      logout()
+      history.pushState(null, '/login')
     },
     handleSwitchLanguage(language) {
-      const { switchLanguage } = this.props;
+      const { switchLanguage } = this.props
 
-      switchLanguage(language);
+      switchLanguage(language)
     }
   },
   mounted: function () {

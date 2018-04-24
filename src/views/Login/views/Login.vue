@@ -69,12 +69,12 @@
 </template>
 
 <script>
-import { mapState, mapGetters,mapMutations,mapActions } from 'vuex'
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 
 import captchajs from '../../../libs/captcha.js'
 import {
   isLogined,
-} from '../../../utils';
+} from '../../../utils'
 
 export default {
   name: 'login',

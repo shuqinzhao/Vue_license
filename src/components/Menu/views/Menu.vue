@@ -72,16 +72,16 @@ export default {
   },
   methods: {
     handleMenuClick: function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+      e.stopPropagation()
+      e.preventDefault()
 
-      const menu = JSON.parse(JSON.stringify(this.menu));
-      const index = parseInt(e.currentTarget.dataset.index, 10);
-      const item = parseInt(e.currentTarget.dataset.item, 10);
+      const menu = JSON.parse(JSON.stringify(this.menu))
+      const index = parseInt(e.currentTarget.dataset.index, 10)
+      const item = parseInt(e.currentTarget.dataset.item, 10)
 
       Object.assign(menu[index].items[item], {
         open: !!!menu[index].items[item].open,
-      });
+      })
       this.menu = menu
     }
   }

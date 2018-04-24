@@ -75,8 +75,8 @@ MODULE[MODULE_BACKUP] = {
   apiprefix: '/everest'
 }
 MODULE[MODULE_LICENSE] = {
-  key: 'QLicense',
-  name: 'QLicense',
+  key: 'QFusion',
+  name: 'QFusion',
   apiprefix: '/api'
 }
 

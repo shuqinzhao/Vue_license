@@ -3,7 +3,7 @@
     <div class="menu-logo">
       <a href="#">
         <img src="../../../assets/Q.png" />
-        <span class="menu-logo-text">QLicense 控制台</span>
+        <span class="menu-logo-text">QFusion 控制台</span>
       </a>
     </div>
 

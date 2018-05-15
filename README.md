@@ -1,4 +1,4 @@
-# qfusion
+# vuelicense
 
 > A Vue.js project
 

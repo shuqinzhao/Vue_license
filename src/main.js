@@ -6,6 +6,7 @@ import router from './router'
 import store from './store'
 import './libs/font-awesome.css'
 import './libs/iconfont.css'
+import { i18n } from './utils/i18n'
 
 Vue.config.productionTip = false
 
@@ -14,6 +15,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   template: '<App/>',
   components: { App }
 })

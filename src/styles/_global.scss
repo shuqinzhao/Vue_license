@@ -1,0 +1,581 @@
+/**
+ * Normalize
+ * 1.0.0
+ * MIT License
+ *
+ * tks: github.com/necolas/normalize.css(v7.0.0)
+ */
+
+
+/**
+ * 所有元素都继承 html 的 box-sizing 方便重置
+ */
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+
+html {
+  line-height: 1.15; /* 调整所有浏览器的 line height */
+  /* 防止 iOS 横屏字号放大, 同时保证在PC上 zoom 功能正常 */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+/**
+ * Remove default margin
+ */
+body, blockquote, figure, p, h1, h2, h3, h4, h5, h6, /* 结构元素 */
+pre, /* 文本格式元素 */
+menu, ul, ol, dd, dl, /* 列表元素 */
+form, fieldset, button, input, optgroup, select, textarea /* 表单元素 */
+{
+  /* 清除默认的 margin 的属性值 */
+  /* div,li 默认没有 margin 与 padding */
+  /* dt 默认 margin padding 值为 0 */
+  /* code 属于 inline 元素 */
+  margin: 0;
+}
+
+
+/**
+ * reset setting list element
+ */
+menu,
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+.ul,
+.ol {
+  padding-left: 30px;
+}
+.ul {
+  list-style-type: disc;
+}
+.ol {
+  list-style-type: decimal;
+}
+.ul .ul,
+.ol .ul {
+  list-style-type: circle;
+}
+dt {
+  font-weight: 700;
+}
+
+
+/**
+ * HTML5 display definitions
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 修复IE 8/9, HTML5新元素不能正确显示的问题, 定义为 inline-block 元素 */
+  *display: inline;*zoom: 1; /* ie 6-7 */
+}
+
+progress {
+  vertical-align: baseline; /* 修复Chrome, Firefox, 和 Opera 的 'progress' 元素没有以 baseline 垂直对齐 */
+}
+
+audio,
+video {
+  &:not([controls]) {
+    display: none; /* 防止没设置 controls 的 audio,video 显示出来 */
+    height: 0; /* 去除 ios5 中额外的高度 */
+  }
+}
+
+
+/**
+ * 修复 IE 7/8/9/10, Firefox 3 和 Safari 4 中「hidden」属性不起作用的问题
+ * 在IE 8/9/10/11, Safari, Firefox < 22 中隐藏「template」元素
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/**
+ * 为可拖动元素添加拖动的光标(http://jsbin.com/apavod/1/edit)
+ */
+[draggable] {
+  cursor: move;
+}
+
+/**
+ * Link
+ * 1. Remove the gray background color from active links in IE 10
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+
+ */
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+
+  &:active,
+  &:hover {
+    outline-width: 0;
+  }
+}
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+/**
+ * 1. Remove the bottom border in Firefox 39-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari
+ */
+abbr {
+  &[data-original-title],
+  &[title] {
+    cursor: help;
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+}
+
+
+/**
+ * address
+ */
+address {
+  font-style: normal;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * Add the correct font style in Android 4.3-
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * 纠正 IE 9- 样式不正确
+ */
+mark {
+  color: #000;
+  background: #ff0;
+}
+
+/**
+ * Add the correct font size in all browsers
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in all browsers
+ */
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-
+ */
+img {
+  /* 去除个别浏览器图片底部的几个像素 */
+  vertical-align: middle;
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
+ * Add the correct margin in IE 8
+ */
+figure {
+  margin: 1em 20px;
+}
+
+/**
+ * blockquote, q
+ */
+blockquote {
+  padding: 5px 10px;
+  font-family: Georgia, serif;
+  /* quotes 属性设置嵌套引用(mbedded quotation)的引号类型 */
+  /* quotes: "\201C" "\201D" "\2018" "\2019"; // 前两个值规定第一级引用嵌套, 后两个值规定下一级引号嵌套 '"' '"' "'" "'" */
+  border-left: 4px solid #ccc;
+  background: #f9f9f9;
+
+  & footer,
+  & small,
+  & cite {
+    font-size: 80%;
+    color: #999;
+  }
+
+  & footer::before,
+  & small::before,
+  & cite::before {
+    content: '\2014 \2009';
+  }
+  & footer > cite::before,
+  & small > cite::before {
+    content: '';
+  }
+}
+
+q {
+  font-family: Georgia, serif;
+
+  &::before {
+    content: '\201C';
+  }
+  &::after {
+    content: '\201D';
+  }
+}
+
+/**
+ * hr
+ */
+hr {
+  margin: 1em auto;
+  padding: 0;
+  height: 1px;
+  border: none;
+  background-color: #333;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.gradient (GradientType=1, startColorstr=#ccc, endColorstr=#333)'; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#ccc, endColorstr=#333); /* IE9 */
+}
+
+/**
+ * 统一等宽字体
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, courier;
+}
+
+/**
+ * 统一 kbd 样式
+ */
+kbd {
+  padding: 1px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+/**
+ * 统一 pre code 元素设置
+ */
+pre,
+code {
+  direction: ltr;
+  text-align: left;
+
+  /*
+  不自动换行
+  white-space: pre; 空白会被浏览器保留
+  word-spacing: normal; 默认字间距
+  word-break: normal; 使用浏览器默认的换行规则
+  设置 pre 强制换行, 避免撑破布局
+  */
+  white-space: pre-wrap; /* css3 保留空白符序列,但是正常地进行换行 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ 在长单词或 URL 地址内部进行换行 */
+  word-break: break-all; /* 允许单词内换行 */
+  background: #f5f2f0;
+  text-shadow: 0 1px #fff;
+  border-radius: 2px;
+  tab-size: 4;
+  hyphens: none; /* 设置断行不出现连字符 '-' */
+
+  &::selection {
+    color: #111;
+    background: #b3d4fc;
+    text-shadow: none;
+  }
+}
+pre {
+  padding: 10px;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+code {
+  margin: 0 2px;
+  padding: 1px 4px;
+  border: 1px dashed #ccc;
+}
+
+/**
+ * Forms
+ * 1. Remove the margin in Firefox and Safari
+ * 2. Correct color not being inherited. Known issue: affects color of disabled elements
+ * 3. Correct font properties not being inherited
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0; /* 1 */
+  color: inherit; /* 2 */
+  font: inherit; /* 3 */
+  line-height: inherit; /* 1 */
+}
+
+button,
+select {
+  text-transform: none; /* Remove the inheritance of text transform in Firefox. */
+}
+
+/**
+ * Button
+ */
+button,
+html input[type='button'], /* Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls */
+[type='reset'],
+[type='submit'] {
+  /* 统一 `overflow` 属性为 visible */
+  overflow: visible;
+  cursor: pointer;
+  -webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari */
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  /* Remove the inner border and padding in Firefox */
+  &::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+  }
+
+  /* Restore the focus styles unset by the previous rule */
+  &:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+}
+
+/* input number remove arrows */
+input[type='number'] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+}
+
+/* Re-set default cursor for disabled elements */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements
+ * Firefox's implementation doesn't respect box-sizing, padding, or width
+
+ * 1. Remove excess padding in IE 8/9/10
+ * 2. Add the correct box sizing in IE 10-
+ */
+[type='checkbox'],
+[type='radio'] {
+  padding: 0; /* 1 */
+  box-sizing: border-box; /* 2 */
+}
+
+/**
+ * 修正 Chrome 中 input [type="number"] 在特定高度和 font-size 时,下面一个箭头光标变成「cursor: text」
+ * demo: http://jsfiddle.net/FFXEc/
+ * 动画演示: http://gtms04.alicdn.com/tps/i4/T18kd8FCtaXXc_FhcF-330-350.gif
+ */
+[type='number'] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    height: auto;
+  }
+}
+
+/**
+ * 1. 修正 Safari 5 和 Chrome 中「appearance」被设置为「searchfield」的问题
+ * 2. 修正 Safari 5 和 Chrome 中「box-sizing」被设置为 「border-box」的问题
+ * 3. Correct the outline style in Safari
+ */
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  box-sizing: content-box; /* 2 */
+  outline-offset: -2px; /* 3 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X
+ */
+[type='search'] {
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+  font-size: 0.75rem;
+}
+
+/**
+ * 1. Change font properties to `inherit` in Safari
+ * 2. Correct the inability to style clickable types in iOS and Safari
+ */
+::-webkit-file-upload-button {
+  font: inherit; /* 1 */
+  -webkit-appearance: button; /* 2 */
+}
+
+/* Define consistent border and padding */
+fieldset {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE
+ * 2. Correct the color inheritance from `fieldset` elements in IE
+ * 3. Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers
+ */
+legend {
+  display: table; /* 1 */
+  padding: 0; /* 3 */
+  max-width: 100%; /* 1 */
+  color: inherit; /* 2 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. 去掉 IE 下默认的滚动条占位
+ * 2. 默认 textarea 与文本 baseline 对齐, 导致文本沉在下面比较难看, 这里统一为 text-bottom(还可设置为 top 顶部对齐)
+ * 3. 修复 IE 6/7 中 vertical-align 影响范围清除
+ * 4. 让 FF,S5,Chrome 下的 textarea 只能纵向拉伸高度, 避免因拉伸而影响布局
+ */
+textarea {
+  overflow: auto; /* 1 */
+  vertical-align: text-bottom; /* 2 */
+  *vertical-align: auto; /* 3 */
+  border: 1px solid;
+  resize: vertical; /* 4 */
+}
+
+/**
+ * Tables
+ * 1. setting max-width
+ * 2. 合并表格的间隙
+ * 3. 去掉单元格之间的间距
+ */
+table {
+  max-width: 100%; /* 1 */
+  border-collapse: collapse; /* 2 */
+  border-spacing: 0; /* 3 */
+}
+
+/* 统一对齐方式 */
+td,
+th,
+caption {
+  text-align: left;
+}
+
+/* 设置默认表格边框 */
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+td,
+th {
+  padding: 4px 6px;
+}
+
+/**
+ * IFrame
+ * 1. 设置 iframe 的背景色以及去除个别浏览器 iframe 底部的几个像素
+ */
+iframe {
+  display: block;
+  /* width: 100%; 显示设置宽度会造成 width="600" 属性设置的宽度无效 */
+  vertical-align: middle; /* 1 */
+  border: none;
+}
+
+/**
+ * Font Boosting(又称 Text Autosizer、Font Inflation)
+ * https://github.com/amfe/article/issues/10
+ * 手机端页面字体的显示大小与 css 中指定的大小不一致
+ * Font Boosting 仅在未限定尺寸的文本流中有效, 通过指定 min-height, max-height, min-width, max-width 可以无副作用的禁掉 Font Boosting 特性
+ */
+p {
+  max-height: 100%;
+}

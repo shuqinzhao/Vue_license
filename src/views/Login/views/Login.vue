@@ -5,7 +5,7 @@
         <fieldset>
           <legend>
             <span>登录</span>
-            <ul class="language" style="{display: 'none'}">
+            <ul class="language">
               <li class="language__item" data-language="zh-CN">中文</li>
               <li class="language__item active" data-language="en-US">English</li>
             </ul>
@@ -54,7 +54,7 @@
     <div class="info">
       <h3 class="info__hd">
         <a :href="link" target="_blank">
-          <img class="info__logo" src="../../../assets/imgs/brand.png" alt="沃趣科技" />
+          <img class="info__logo" :src="infoLogo" alt="沃趣科技" />
         </a>
       </h3>
 
@@ -81,6 +81,7 @@ export default {
   data () {
     return {
       msg: '',
+      infoLogo: '../../../assets/imgs/brand.png',
       captcha: captchajs(),
       link: '#',
     }

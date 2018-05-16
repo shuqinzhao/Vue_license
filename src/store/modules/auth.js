@@ -3,7 +3,6 @@ import {
   STORAGE_OBJECT,
   KEY_AUTH,
   fetch,
-  BACKUP_USER_INFORMATION
 } from '../../utils'
 import docCookies from '../../utils/docCookies'
 

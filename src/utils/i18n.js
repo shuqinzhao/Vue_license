@@ -9,7 +9,7 @@ import LangZhTW from '../locales/zh-TW'
 Vue.use(VueI18n)
 
 export const i18n = new VueI18n({
-  locale: 'enUS', 
+  locale: 'zhCN', 
   messages:{
     'enUS': LangEn,
     'zhCN': LangZhCN,

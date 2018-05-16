@@ -6,8 +6,8 @@
           <legend>
             <span>登录</span>
             <ul class="language">
-              <li class="language__item" data-language="zh-CN">中文</li>
-              <li class="language__item active" data-language="en-US">English</li>
+              <li :class="['language__item', this.$i18n.locale === 'zhCN' ? 'active' : '']" data-language="zhCN" @click="handleSwitchLanguage">中文</li>
+              <li :class="['language__item', this.$i18n.locale === 'enUS' ? 'active' : '']" data-language="enUS" @click="handleSwitchLanguage">English</li>
             </ul>
           </legend>
 
@@ -111,6 +111,16 @@ export default {
     },
     handleChangeCaptcha: function () {
       this.captcha = captchajs()
+    },
+    handleSwitchLanguage: function (e) {
+      const language = e.target.dataset.language
+      const local = this.$i18n.locale
+
+      if (language === local) {
+        return
+      } else {
+        this.$i18n.locale = language
+      }
     },
     ...mapActions(['logout', 'login'])
   },

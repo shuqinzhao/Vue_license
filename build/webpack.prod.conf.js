@@ -8,6 +8,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 
 var env = config.build.env
 
@@ -25,6 +26,11 @@ var webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname), // webpack.config.js 文件的根路径
+      verbose: true, // 输出 log 到 console
+      dry: false, // true 时会不删除任何东西(测试用)
+    }),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
@@ -84,16 +90,15 @@ var webpackConfig = merge(baseWebpackConfig, {
       chunks: ['vendor']
     }),
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../src/libs'),
-        to: 'libs',
-      },
-      {
-        from: path.resolve(__dirname, '../src/assets'),
-        to: 'assets',
+    new CopyWebpackPlugin(
+      [
+        { from: path.resolve('src', 'libs'), to: 'libs' },
+        { from: path.resolve('src', 'assets'), to: 'assets' },
+      ],{
+        ignore: [ '.DS_Store', 'Thumbs.db', '.gitkeep' ], // 忽略文件
+        copyUnmodified: false, // hot-dev 时只复制有修改的文件
       }
-    ])
+    ),
   ]
 })
 

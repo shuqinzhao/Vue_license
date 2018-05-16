@@ -54,7 +54,7 @@
     <div class="info">
       <h3 class="info__hd">
         <a :href="link" target="_blank">
-          <img class="info__logo" src="../assets/brand.png" alt="沃趣科技" />
+          <img class="info__logo" src="../../../assets/imgs/brand.png" alt="沃趣科技" />
         </a>
       </h3>
 

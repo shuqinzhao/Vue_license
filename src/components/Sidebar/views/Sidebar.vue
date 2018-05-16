@@ -2,7 +2,7 @@
   <div :class="['sidebar menu handle vertical right']">
     <div class="menu-logo">
       <a href="#">
-        <img src="../../../assets/Q.png" />
+        <img src="../../../assets/imgs/Q.png" />
         <span class="menu-logo-text">QFusion 控制台</span>
       </a>
     </div>

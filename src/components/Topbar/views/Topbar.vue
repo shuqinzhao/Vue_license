@@ -5,7 +5,7 @@
         <ul class="product-list">
           <li class="product-item active">
             <a>
-              <img src="../../../assets/Q.png" /> QFusion 控制台
+              <img src="../../../assets/imgs/Q.png" /> QFusion 控制台
             </a>
           </li>
         </ul>

@@ -1,3 +1,4 @@
+var path = require('path')
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
@@ -5,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -29,6 +31,13 @@ module.exports = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: 'src/index.html',
       inject: true
+    }),
+    new CopyWebpackPlugin([
+      { from: path.resolve('src', 'libs'), to: 'libs' },
+      { from: path.resolve('src', 'assets'), to: 'assets' },
+    ],{
+      ignore: [ '.DS_Store', 'Thumbs.db', '.gitkeep' ], // 忽略文件
+      copyUnmodified: false, // hot-dev 时只复制有修改的文件
     }),
     new FriendlyErrorsPlugin()
   ]

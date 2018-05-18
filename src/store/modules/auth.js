@@ -5,13 +5,14 @@ import {
   fetch,
 } from '../../utils'
 import docCookies from '../../utils/docCookies'
+import {
+  userLoginApi
+} from '../../services/common'
 
 const state = {
-  username: '',
+  user: '',
   token: '',
   role: '',
-  license_token: '',
-  isFetching: false
 }
 
 const mutations = {
@@ -26,12 +27,12 @@ const mutations = {
       docCookies.setItem(KEY_AUTH, record)
     }
 
-    state.auth = auth
+    state = auth
   },
   setAuth(auth) {
     if (auth) {
       const authString = JSON.stringify(auth)
-  
+
       STORAGE_OBJECT.setItem(KEY_AUTH, authString)
   
       // 写入 cookie
@@ -48,29 +49,14 @@ const mutations = {
 
 const actions = {
   login ({ state, commit }, { name, password } ) {
-    return new Promise((resolve, reject) => {
-      fetch(MODULE_LICENSE, '/login', {
-        method: 'post',
-        body: JSON.stringify({
-          name: name,
-          password: password
-        }),
-      })
-      .then(req => req.json())
+    return userLoginApi({name, password})
+      .then(res => res.json())
       .then(json => {
-        if (json.error_code === 0) {
-          Object.assign(state, {
-            token: json.data.token,
-            username: json.data.user,
-            role: json.data.role,
-            license_token: json.data.license_token
-          })
-          commit('setAuth', state)
-        } else {
-          reject(new Error('The interface returned an error'))
-        }
+        Object.assign(state, json.data)
+        commit('setAuth', state)
+
+        return state
       })
-    })
   },
   logout (context) {
     context.commit('removeAuth')

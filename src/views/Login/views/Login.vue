@@ -107,7 +107,14 @@ export default {
         return
       }
 
-      this.login({name, password})
+      const self = this
+      this.$store.dispatch('login', {name, password}).then(data => {
+        if (data.token) {
+          self.$router.push('/')
+        } else {
+          return
+        }
+      })
     },
     handleChangeCaptcha: function () {
       this.captcha = captchajs()

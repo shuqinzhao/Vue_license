@@ -71,5 +71,5 @@ export const isLogined = () => {
     STORAGE_OBJECT.setItem(KEY_AUTH, JSON.stringify(auth))
   }
 
-  return Boolean(auth.username && auth.token && auth.role !== undefined)
+  return Boolean(auth.user && auth.token && auth.role !== undefined)
 }

@@ -15,7 +15,7 @@
         <div class="fl-l auth-user dropdown cur-p" v-show="isLogin">
           <div class="dropdown-toggle">
             <i class="fa fa-user mr5"></i>
-            <span>{{this.$store.state.auth.username}}</span>
+            <span>{{this.$store.state.auth.user}}</span>
           </div>
           <ul class="dropdown-menu">
             <li class="dropdown-item" @click="handleLogout"><i class="fa fa-sign-out mr5"></i>登出</li>

@@ -19,11 +19,6 @@ import {
 
 export default {
   name: 'app',
-  data () {
-    return {
-      isLogin: false,
-    }
-  },
   methods: {
     hidenPageLoading () {
       const pageLoading = document.querySelector('.page--loading')
@@ -41,7 +36,11 @@ export default {
   },
   mounted: function () {
     this.hidenPageLoading()
-    this.isLogin = isLogined()
+  },
+  computed: {
+    isLogin: function () {
+      return isLogined()
+    },
   },
   components: {
     Topbar,

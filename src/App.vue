@@ -49,22 +49,6 @@ export default {
 }
 </script>
 
-<style>
-* {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-#root {
-  height: 100%;
-}
-#app {
-  padding: 70px 20px 80px 220px;
-  height: 100%;
-  transition: .3s all;
-}
-</style>
 <style scoped>
   @import './styles/app.scss';
   @import './styles/core.scss';

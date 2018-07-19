@@ -1,7 +1,5 @@
 <template>
   <div id="root">
-    <Topbar v-if="isLogin" :isLogin="isLogin" />
-    <Sidebar v-if="isLogin" :isLogin="isLogin" />
     <div id="app" v-if="isLogin">
       <router-view></router-view>
     </div>
@@ -10,9 +8,6 @@
 </template>
 
 <script>
-import Topbar from './components/Topbar'
-import Sidebar from './components/Sidebar'
-
 import {
   isLogined
 } from './utils'
@@ -41,15 +36,11 @@ export default {
     isLogin: function () {
       return isLogined()
     },
-  },
-  components: {
-    Topbar,
-    Sidebar,
   }
 }
 </script>
 
-<style scoped>
+<style>
   @import './styles/app.scss';
   @import './styles/core.scss';
 </style>
